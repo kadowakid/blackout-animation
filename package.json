@@ -1,0 +1,16 @@
+{
+  "name": "blackout-animation",
+  "version": "0.0.8",
+  "description": "",
+  "main": "/src/index.js",
+  "repository": { 
+    "type" : "git",
+    "url" : "https://github.com/kadowakid/blackout-animation.git"
+  },
+  "author": "kadowakid",
+  "keywords": [
+    "Animation",
+    "React",
+    "Vue.js"
+  ]
+}
