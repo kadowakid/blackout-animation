@@ -1,6 +1,6 @@
 {
   "name": "blackout-animation",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "",
   "main": "/src/index.js",
   "repository": { 
@@ -9,8 +9,8 @@
   },
   "author": "kadowakid",
   "keywords": [
-    "Animation",
-    "React",
-    "Vue.js"
+    "animation",
+    "react",
+    "vue.js"
   ]
 }

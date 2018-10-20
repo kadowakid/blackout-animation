@@ -223,7 +223,7 @@ export const barAnimation = (property, callback) => {
 }
 
 export const stripeAnimation = (property, callback) => {
-  callback = !callback && typeof property === 'function' && property;
+  callback = !callback && typeof property === 'function' ? property : callback;
   property = typeof property !== 'object' ? {} : property;
   const type = parseInt(property.type) === 2 ? parseInt(property.type) : 1,
     elements = checkNum(property.elements) ? parseInt(property.elements) : 10,
