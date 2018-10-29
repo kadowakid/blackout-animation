@@ -1,12 +1,10 @@
-const path = require('path');
-console.log(path.resolve(__dirname));
 const config = {
   entry: {
-    demo: './App.js',
-    blackout: './blackout.js' 
+    'docs/demo': './App.js',
+    'src/blackout.min': '../src/blackout.js'
   },
   output: {
-    path: path.resolve(__dirname.replace('demo',''), 'docs'),
+    path: __dirname.replace('demo',''),
     filename: '[name].js'
   },
   devServer: {
