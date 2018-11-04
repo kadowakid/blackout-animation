@@ -1,33 +1,46 @@
+const path = require('path');
+const dev = process.env.NODE_ENV === 'development';
+
+const entry = dev 
+  ? {
+    demo : './App.js'
+  }
+  : {
+    'docs/demo' : './App.js',
+    'src/blackout.min' : '../src/blackout.js'
+  };
+
+const outputPath = dev ? '../docs/' : '../';
+
 const config = {
-  entry: {
-    'docs/demo': './App.js',
-    'src/blackout.min': '../src/blackout.js'
-  },
+  devtool: 'inline-source-map',
+  entry: entry,
   output: {
-    path: __dirname.replace('demo',''),
+    path: path.resolve(__dirname, outputPath),
     filename: '[name].js'
   },
   devServer: {
     port: 5000,
-    contentBase: '../docs',
-    inline: true
+    contentBase: path.resolve(__dirname, '../docs/'),
+    open: true
   },
   module: {
-    rules: [{
-      test: /\.js$/,
-      loader: 'babel-loader',
-      options: {
-        presets: ["@babel/preset-env","@babel/preset-react"]
+    rules: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        options: {
+          presets: ["@babel/preset-env", "@babel/preset-react"]
+        }
+      },
+      {
+        test: /\.s?css$/,
+        loader: ['style-loader', 'css-loader', 'sass-loader']
       }
-    },
-    {
-      test: /\.s?css$/,
-      loader: ['style-loader','css-loader','sass-loader']
-    }
-   ]
- },
- node: {
-    fs: 'empty',
+    ]
+  },
+  performance: {
+    hints: false
   }
 };
 

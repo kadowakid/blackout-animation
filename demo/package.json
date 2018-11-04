@@ -2,8 +2,8 @@
   "name": "blackout-animation-demo",
   "description": "",
   "scripts": {
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server -d"
+    "build": "webpack --mode=production",
+    "start": "NODE_ENV=development webpack-dev-server --mode=development"
   },
   "author": "kadowakid",
   "dependencies": {
