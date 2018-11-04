@@ -154,7 +154,7 @@ export const slideAnimation = (property, callback) => {
 
   setTimeout(() => {
     elm.parentNode.removeChild(elm)
-  }, delay * 2 + transition * 2 + delay + pre)
+  }, transition * 2 + interval + pre)
 }
 
 export const barAnimation = (property, callback) => {
