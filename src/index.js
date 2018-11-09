@@ -242,7 +242,7 @@ export const stripeAnimation = (property, callback) => {
   const baseStyle = {
     background: color,
     position: 'fixed',
-    transition: transition / 1000 + 's'
+    transition: transition / 1000 + 's linear'
   };
 
   [...Array(elements)].forEach((stripe, index) => {

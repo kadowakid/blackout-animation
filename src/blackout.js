@@ -8,7 +8,7 @@ import {
     accordionAnimation,
     squareAnimation,
     panelAnimation
-} from '../src/index'
+} from '../src'
 
 window.$blackout = {
     blackoutAnimation : blackoutAnimation,
