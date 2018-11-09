@@ -5,9 +5,6 @@ import Animations from './default'
 import './css/example.scss';
 import * as blackout from '../src';
 
-const blankNum = Animations.length % 3;
-blankNum && [...Array(blankNum)].forEach(() => Animations.push(false));
-
 class App extends Component {
   constructor(props) {
     super();
@@ -43,6 +40,9 @@ class App extends Component {
   }
   render() {
     const backToTop = this.state.sampleCode;
+    let renderAnimations = [].concat(Animations);
+    const blankNum = Animations.length % 3;
+    blankNum && [...Array(blankNum)].forEach(() => renderAnimations.push(false));
     return (
       <div className="container">
         {
@@ -61,7 +61,7 @@ class App extends Component {
             </header>
             <div className="contentWrap">
               <ul className="content">
-                {Animations.map((animation, animations_index) => {
+                {renderAnimations.map((animation, animations_index) => {
                   return animation ? 
                   (
                     <li key={animations_index}>
