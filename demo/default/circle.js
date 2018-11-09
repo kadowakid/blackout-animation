@@ -18,6 +18,5 @@ export default {
         def: '#000',
         ref: 'circleColor',
         remark: ''
-    }],
-    button: function(){this.handleCircleAnimation()}
+    }]
 }

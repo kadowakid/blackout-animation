@@ -30,6 +30,5 @@ export default {
         def: '#000',
         ref: 'panelColor',
         remark: ''
-    }],
-    button: function(){this.handlePanelAnimation()}
+    }]
 }

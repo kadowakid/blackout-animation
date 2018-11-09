@@ -24,6 +24,5 @@ export default {
         def: '#000',
         ref: 'squareColor',
         remark: ''
-    }],
-    button: function(){this.handleSquareAnimation()}
+    }]
 }

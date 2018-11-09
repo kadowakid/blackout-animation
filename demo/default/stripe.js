@@ -30,6 +30,5 @@ export default {
         def: '#000',
         ref: 'stripeColor',
         remark: ''
-    }],
-    button: function(){this.handleStripeAnimation()}
+    }]
 }

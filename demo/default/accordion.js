@@ -36,6 +36,5 @@ export default {
         def: '#000',
         ref: 'accordionColor',
         remark: ''
-    }],
-    button: function(){this.handleAccordionAnimation()}
+    }]
 }

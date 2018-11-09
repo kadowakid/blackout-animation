@@ -27,6 +27,5 @@ export default {
         def: '#000',
         ref: 'blackoutColor',
         remark: ''
-    }],
-    button: function(){this.handleBlackoutAnimation()}
+    }]
 }

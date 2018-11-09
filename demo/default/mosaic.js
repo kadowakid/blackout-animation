@@ -36,6 +36,5 @@ export default {
         def: '#000',
         ref: 'mosaicColor',
         remark: ''
-    }],
-    button: function(){this.handleMosaicAnimation()}
+    }]
 }

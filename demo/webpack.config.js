@@ -13,7 +13,7 @@ const entry = dev
 const outputPath = dev ? '../docs/' : '../';
 
 const config = {
-  devtool: 'inline-source-map',
+  devtool: dev ? 'inline-source-map' : undefined,
   entry: entry,
   output: {
     path: path.resolve(__dirname, outputPath),

@@ -27,6 +27,5 @@ export default {
       def: '#000',
       ref: 'slideColor',
       remark: ''
-  }],
-  button: function(){this.handleSlideAnimation()}
+  }]
 }

@@ -1,16 +1,5 @@
 import React,{Component} from 'react';
 
-const numChecker = num =>{
-  const numCheck = /^\d+$/;
-  const check = num && num.match(numCheck);
-  return check;
-}
-
-const codeAreaEdit = () => {
-  const code = document.getElementsByClassName('code')[0];
-  code.style.maxHeight = code.scrollHeight + 'px';   
-}
-
 export default class SampleCode extends Component {
   constructor(props) {
     super();
@@ -20,10 +9,14 @@ export default class SampleCode extends Component {
     };
   }
   componentDidMount(){
-    codeAreaEdit();    
+    this.codeAreaEdit();    
   }
   componentDidUpdate(){
-    codeAreaEdit();
+    this.codeAreaEdit();
+  }
+  codeAreaEdit(){
+    const code = document.getElementsByClassName('code')[0];
+    code.style.maxHeight = code.scrollHeight + 'px';   
   }
   changeView(e){
     if(e.target.value === this.state.codeView) return false;
@@ -37,6 +30,11 @@ export default class SampleCode extends Component {
       code.style.maxHeight = code.scrollHeight + 'px';
       code.style.paddingBottom = '10px';
     },500) 
+  }
+  checkNum(num) {
+    const numCheck = /^\d+$/;
+    const check = num && num.match(numCheck);
+    return check;
   }
   render() {
     const sampleCode = this.props.code;
@@ -66,18 +64,14 @@ export default class SampleCode extends Component {
           <div className='indent'>
             <span className="animationCode"><span className="function">{this.props.name}</span>(&#123;</span>
             <div className='indent'>
-              {Object
-                .keys(this.props.code)
-                .map((name, i) => {
-                  return (
-                    <p className="animationCode" key={i}>
-                      <span className="text">{name}</span>
-                       : <span className="text">{numChecker(this.props.code[name]) ? this.props.code[name] : "'" + this.props.code[name] + "'"}</span>{Object
-                        .keys(this.props.code)
-                        .length !== i + 1 && ','}
-                    </p>
-                  )
-                })}</div>
+              {Object.keys(this.props.code).map((name, i) => {
+                return (
+                  <p className="animationCode" key={i}>
+                    <span className="text">{name}</span>
+                      : <span className="text">{this.checkNum(this.props.code[name]) ? this.props.code[name] : "'" + this.props.code[name] + "'"}</span>{Object.keys(this.props.code).length !== i + 1 && ','}
+                  </p>
+                )
+              })}</div>
             <span className="animationCode">&#125;,()=>&#123;</span>
             <div className="indent">
               <span className='animationCode'><span className="keyword">this</span>.<span className="function">setState</span>(&#123;<span className="text">view</span> : !<span className="keyword">this</span>.<span className="text">state</span>.<span className="text">view</span>&#125;)</span>
@@ -120,18 +114,16 @@ export default class SampleCode extends Component {
             <div className='indent'>
               <span className="animationCode"><span className="function">{this.props.name}</span>(&#123;</span>
               <div className='indent'>
-                {Object
-                  .keys(this.props.code)
-                  .map((name, i) => {
-                    return (
-                      <p className="animationCode" key={i}>
-                        {name}
-                        : {numChecker(this.props.code[name]) ? this.props.code[name] : "'" + this.props.code[name] + "'"}{Object
-                          .keys(this.props.code)
-                          .length !== i + 1 && ','}
-                      </p>
-                    )
-                  })}</div>
+                {Object.keys(this.props.code).map((name, i) => {
+                  return (
+                    <p className="animationCode" key={i}>
+                      {name}
+                      : {this.checkNum(this.props.code[name]) ? this.props.code[name] : "'" + this.props.code[name] + "'"}{Object
+                        .keys(this.props.code)
+                        .length !== i + 1 && ','}
+                    </p>
+                  )
+                })}</div>
               <span className="animationCode">&#125;,()=>&#123;</span>
               <div className="indent">
                   <span className="animationCode">this.view = !this.view;</span>
