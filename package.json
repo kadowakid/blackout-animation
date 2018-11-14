@@ -9,8 +9,8 @@
     "url" : "https://github.com/kadowakid/blackout-animation.git"
   },
   "scripts": {
-    "build": "NODE_ENV=production webpack --mode=production && npm run lib",
-    "start": "NODE_ENV=development webpack-dev-server --mode=development",
+    "build": "NODE_ENV=production webpack && npm run lib",
+    "start": "NODE_ENV=development webpack-dev-server",
     "lib": "babel src/index.js -o lib/index.js"
   },
   "author": "kadowakid",

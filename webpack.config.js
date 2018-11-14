@@ -1,8 +1,9 @@
 const path = require('path');
-const dev = process.env.NODE_ENV === 'development';
+const NODE_ENV = process.env.NODE_ENV;
+const dev = NODE_ENV === 'development';
 const entry = dev ?
   {
-    demo : './App.js'
+    demo : './demo/App.js'
   } :
   {
     'docs/demo' : './demo/App.js',
@@ -12,6 +13,7 @@ const entry = dev ?
 const outputPath = dev ? 'docs' : './';
 
 const config = {
+  mode: NODE_ENV,
   devtool: dev ? 'inline-source-map' : undefined,
   entry: entry,
   output: {
