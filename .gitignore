@@ -1,3 +1,6 @@
 *.log
+*.lock
 node_modules/
+lib
+
 
