@@ -305,9 +305,10 @@ export const circleAnimation = (property, callback) => {
   const innerElm = elm.childNodes[0];
   innerElm.style.position = 'relative';
   innerElm.style.width = innerElm.style.height = '100%';
-  [...Array(5)].forEach(() => innerElm.appendChild(document.createElement('div')))
 
-  innerElm.childNodes.forEach((el, index) => {
+  [...Array(5)].forEach((none, index) => {
+    innerElm.appendChild(document.createElement('div'));
+    const el = innerElm.childNodes[index];
     const innerStyle = {
       position: 'absolute',
       transition: transition / 1000 + 's',
@@ -354,7 +355,6 @@ export const mosaicAnimation = (property, callback) => {
   const col = Math.ceil(window.innerWidth / size);
   const row = Math.ceil(window.innerHeight / size);
   const items = Math.ceil(col * row / times);
-  [...Array(col * row)].forEach(() => elm.appendChild(document.createElement('div')))
 
   const baseStyle = {
     position: 'fixed',
@@ -364,8 +364,10 @@ export const mosaicAnimation = (property, callback) => {
     transition: transition / 1000 + 's',
     opacity: 0
   };
-
-  elm.childNodes.forEach((el, index) => {
+  
+  [...Array(col * row)].forEach((none, index) => {
+    elm.appendChild(document.createElement('div'));
+    const el = elm.childNodes[index];
     const specStyle = {
       left: (index % col) * size + 'px',
       top: Math.floor(index / col) * size + 'px'
@@ -384,8 +386,8 @@ export const mosaicAnimation = (property, callback) => {
   });
 
   for (let i = shuffle.length - 1; i > 0; i--) {
-    let r = Math.floor(Math.random() * (i + 1));
-    let tmp = shuffle[i];
+    const r = Math.floor(Math.random() * (i + 1));
+    const tmp = shuffle[i];
     shuffle[i] = shuffle[r];
     shuffle[r] = tmp;
   }
@@ -475,7 +477,6 @@ export const squareAnimation = (property, callback) => {
   const elm = insertElement();
   const col = Math.ceil(window.innerWidth / size);
   const row = Math.ceil(window.innerHeight / size);
-  [...Array(col * row)].forEach(() => elm.appendChild(document.createElement('div')))
 
   const baseStyle = {
     position: 'fixed',
@@ -486,7 +487,9 @@ export const squareAnimation = (property, callback) => {
     transform: 'scale(0)'
   };
 
-  elm.childNodes.forEach((el, index) => {
+  [...Array(col * row)].forEach((none, index) => {
+    elm.appendChild(document.createElement('div'));
+    const el = elm.childNodes[index];
     const specStyle = {
       left: (index % col) * size + 'px',
       top: Math.floor(index / col) * size + 'px'
@@ -528,7 +531,6 @@ export const panelAnimation = (property, callback) => {
   const col = Math.ceil(window.innerWidth / size);
   const row = Math.ceil(window.innerHeight / size);
   const specDelay = delay / (col * row);
-  [...Array(col * row)].forEach(() => elm.appendChild(document.createElement('div')))
 
   const baseStyle = {
     position: 'fixed',
@@ -540,7 +542,9 @@ export const panelAnimation = (property, callback) => {
     transformStyle: 'preserve-3d'
   };
 
-  elm.childNodes.forEach((el, index) => {
+  [...Array(col * row)].forEach((none, index) => {
+    elm.appendChild(document.createElement('div'));
+    const el = elm.childNodes[index];
     const specStyle = {
       left: (index % col) * size + 'px',
       top: Math.floor(index / col) * size + 'px'

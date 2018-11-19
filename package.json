@@ -1,6 +1,6 @@
 {
   "name": "blackout-animation",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "",
   "license": "MIT",
   "main": "lib/index.js",
