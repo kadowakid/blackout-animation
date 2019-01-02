@@ -1,7 +1,7 @@
 {
   "name": "blackout-animation",
-  "version": "0.0.16",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Animation modules for single page application.",
   "license": "MIT",
   "main": "lib/index.js",
   "repository": { 

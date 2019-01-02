@@ -4,3 +4,5 @@
 `npm install blackout-animation`
 ## usage
 `import {blackoutAnimation} from 'blackout-animation'`
+## License
+MIT
